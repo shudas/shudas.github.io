@@ -1,4 +1,15 @@
 body {
 	margin: 0px;
 	padding: 0px;
+	font-family: 'Open sans', sans-serif;
 }
+
+.header {
+	font-family: 'Lora', serif;
+	font-size: 1.25em;
+}
+
+/*paper-tabs {
+	background-color: #3C2263;
+	color: #e2e1b3;
+}*/

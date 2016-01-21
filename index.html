@@ -2,10 +2,54 @@
 <html>
 <head>
 	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-	<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+	<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+	<link rel="import" type="text/css" href="bower_components/paper-tabs/paper-tabs.html">
+	<link rel="import" type="text/css" href="bower_components/paper-tabs/paper-tab.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Lora" rel="stylesheet" type="text/css">
+	<style is="custom-style">
+        :root {
+            --highlight-color: #AE97D1;
+            --purple-color: #3C2263;
+            --font-color: #e2e1b3;
+            --paper-tab-ink: var(--highlight-color);
+
+            /* custom CSS property */
+            /*--paper-tabs-selection-bar-color: blue;*/
+
+            /* custom CSS mixin */
+            --paper-tabs: {
+            	background-color: var(--purple-color);
+            	selection-bar-color: var(--font-color);
+                color: var(--font-color); /* variable defined in default-theme.html */
+            }
+        }
+    </style>
 </head>
-<body class="fullbleed vertical layout">
+<body class="">
+	<paper-tabs selected="0" class="header">
+		<paper-tab>EDUCATION</paper-tab>
+		<paper-tab>EXPERIENCE</paper-tab>
+		<paper-tab>PROJECTS</paper-tab>
+		<paper-tab>CONTACT</paper-tab>
+	</paper-tabs>
+
+	<iron-pages selected="0">
+	    <div>EDUCATION</div>
+	    <div>EXPERIENCE</div>
+	    <div>PROJECTS</div>
+	    <div>CONTACT</div>
+	</iron-pages>
+
+	<script>
+	     var pages = document.querySelector('iron-pages');
+	     var tabs = document.querySelector('paper-tabs');
+
+	    tabs.addEventListener('iron-select', function() { 
+	        pages.selected = tabs.selected;
+	        console.log(pages.selected);
+	    });
+	</script>
 </body>
 </html>
