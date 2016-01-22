@@ -2,21 +2,24 @@
 <html>
 <head>
 	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-	<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
-	<link rel="import" type="text/css" href="bower_components/paper-tabs/paper-tabs.html">
-	<link rel="import" type="text/css" href="bower_components/paper-tabs/paper-tab.html">
+	<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+	<link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+	<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+	<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+	<link rel="import" href="bower_components/paper-card/paper-card.html">
+	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Lora" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis" rel="stylesheet" type="text/css">
 	<style is="custom-style">
         :root {
             --highlight-color: #AE97D1;
             --purple-color: #3C2263;
             --font-color: #e2e1b3;
-            --paper-tab-ink: var(--highlight-color);
 
-            /* custom CSS property */
-            /*--paper-tabs-selection-bar-color: blue;*/
+            --default-primary-color: var(--purple-color);
+
+            --paper-tab-ink: var(--font-color);
 
             /* custom CSS mixin */
             --paper-tabs: {
@@ -24,32 +27,77 @@
             	selection-bar-color: var(--font-color);
                 color: var(--font-color); /* variable defined in default-theme.html */
             }
+
+            /*toolbar stuffs*/
+            /*--paper-toolbar-background: var(--purple-color);*/
+            --paper-toolbar-title: {
+            	font-family: 'Dosis', serif;
+            	margin-left: 8px;
+            	font-size: 2em;
+            }
+
+            --paper-toolbar: {
+				box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            --paper-card-content: {
+            	/*padding: 0px;*/
+            }
         }
     </style>
 </head>
-<body class="">
-	<paper-tabs selected="0" class="header">
-		<paper-tab>EDUCATION</paper-tab>
-		<paper-tab>EXPERIENCE</paper-tab>
-		<paper-tab>PROJECTS</paper-tab>
-		<paper-tab>CONTACT</paper-tab>
-	</paper-tabs>
+<body>
+	<div class="horizontal layout">
+		<!-- empty for picture -->
+		<div class="flex-6"></div>
+		<div class="flex-6">
+			<template is="dom-bind">
+				<div class="vertical layout">
+					<div>
+						<paper-toolbar class="medium-tall">
+							<div class="title">Shuvajit Das</div>
+							<div class="bottom fit flex">
+								<paper-tabs selected="{{selected}}" on-iron-select="onTabSelect">
+									<paper-tab>EXPERIENCE</paper-tab>
+									<paper-tab>EDUCATION</paper-tab>
+									<paper-tab>PROJECTS</paper-tab>
+									<paper-tab>CONTACT</paper-tab>
+								</paper-tabs>
+							</div>
+						</paper-toolbar>
+					</div>
 
-	<iron-pages selected="0">
-	    <div>EDUCATION</div>
-	    <div>EXPERIENCE</div>
-	    <div>PROJECTS</div>
-	    <div>CONTACT</div>
-	</iron-pages>
+					<paper-card class="section">
+						<div class="card-content">
+							<p id="intro-info">
+								Hi there! Looks like you found my website. Feel free to look around here.
+							</p>
+							<iron-pages selected="{{selected}}">
+								<div>
+									Page 1
+								</div>
+								<div>
+									Page 2
+								</div>
+								<div>
+									Page 3
+								</div>
+								<div>
+									Page 4
+								</div>
+							</iron-pages>
+						</div>
+					</paper-card>
+				</div>
+			</template>
+		</div>
+	</div>
 
-	<script>
-	     var pages = document.querySelector('iron-pages');
-	     var tabs = document.querySelector('paper-tabs');
-
-	    tabs.addEventListener('iron-select', function() { 
-	        pages.selected = tabs.selected;
-	        console.log(pages.selected);
-	    });
+	<script type="text/javascript">
+		app.onTabSelect = function(event, details){    
+			console.log(event.target.selected);
+		};
 	</script>
+	
 </body>
 </html>
