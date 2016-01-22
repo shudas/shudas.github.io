@@ -64,16 +64,19 @@
 <body>
 	<div class="horizontal layout">
 		<!-- empty for picture -->
-		<div class="flex-6" id="left-half"></div>
+		<iron-media-query query="(min-width: 856px)" query-matches="{{wide}}"></iron-media-query>
+		<template is="dom-if" if="{{wide}}">
+			<div class="flex-6" id="left-half"></div>
+		</template>
 
 		<div class="flex-6">
 			<template is="dom-bind">
 				<div class="vertical layout">
 					<div>
 						<paper-toolbar class="medium-tall">
-							<div class="title">Shuvajit Das</div>
+							<div class="title" id="my-name">Shuvajit Das</div>
 							<div class="bottom fit flex">
-								<paper-tabs selected="{{selected}}">
+								<paper-tabs selected="{{selected}}" id="tabs">
 									<paper-tab>EXPERIENCE</paper-tab>
 									<paper-tab>EDUCATION</paper-tab>
 									<paper-tab>PROJECTS</paper-tab>

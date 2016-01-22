@@ -1,4 +1,5 @@
 html {
+	/*min-width: 372px;*/
 	height: 100%;
 	background: url(images/me2.jpg) no-repeat center left fixed; 
 	-webkit-background-size: cover;
@@ -23,5 +24,17 @@ body {
 @media only screen and (max-width : 856px) {
 	#left-half {
 		display: none;
+	}
+
+	#my-name {
+		margin: 0px;
+		text-align: center;
+	}
+}
+
+/*lower font size*/
+@media only screen and (max-width : 372px) {
+	#tabs {
+		font-size: 0.7em;
 	}
 }
