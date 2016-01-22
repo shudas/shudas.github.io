@@ -21,7 +21,7 @@
         :root {
             --highlight-color: #AE97D1;
             /*--purple-color: #3C2263;*/
-            --purple-color: rgba(60, 34, 99, 0.85);
+            --purple-color: rgba(60, 34, 99, 0.92);
             --font-color: #e2e1b3;
 
             --default-primary-color: var(--purple-color);
@@ -57,7 +57,7 @@
             --paper-card-content: {
             	/*'#8a2636', '#1a5159', '#c95f26', '#1c9541'*/
             	/*background: #54397b;*/
-            	background: rgba(84, 57, 123, 0.85);
+            	background: rgba(84, 57, 123, 0.92);
             }
         }
     </style>
@@ -83,10 +83,10 @@
 						</paper-toolbar>
 					</div>
 
-					<paper-card class="section">
+<!-- 					<paper-card class="section">
 						<div class="card-content" id="main-card">
 							<div id="intro-info">
-								Hi there! Looks like you found my website. Feel free to look around here.
+								
 							</div>
 							<iron-pages selected="{{selected}}">
 								<div>
@@ -103,7 +103,34 @@
 								</div>
 							</iron-pages>
 						</div>
+					</paper-card> -->
+					<paper-card class="section" id="intro-info">
+						<div class="card-content">
+							Hi there! Looks like you found my website. Feel free to look around here.
+						</div>
 					</paper-card>
+					<iron-pages selected="{{selected}}" class="vertical layout">
+						<paper-card class="section flex">
+							<div class="card-content main-card">
+								Page 1
+							</div>
+						</paper-card>
+						<paper-card class="section flex">
+							<div class="card-content main-card">
+								Page 2
+							</div>
+						</paper-card>
+						<paper-card class="section flex">
+							<div class="card-content main-card">
+								Page 3
+							</div>
+						</paper-card>
+						<paper-card class="section flex">
+							<div class="card-content main-card">
+								Page 4
+							</div>
+						</paper-card>
+					</iron-pages>
 				</div>
 			</template>
 		</div>
@@ -115,8 +142,8 @@
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
-		        $('#main-card').css("background-color", colors[tabs.selected]);
-		        $('#main-card').css({'opacity': 0.85});
+		        $('.main-card').css("background-color", colors[tabs.selected]);
+		        $('.main-card').css({'opacity': 0.92});
 		    });
         });
 	</script>
