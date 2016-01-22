@@ -20,7 +20,8 @@ body {
 	margin-top: 16px;
 }
 
-/*paper-tabs {
-	background-color: #3C2263;
-	color: #e2e1b3;
-}*/
+@media only screen and (max-width : 856px) {
+	#left-half {
+		display: none;
+	}
+}

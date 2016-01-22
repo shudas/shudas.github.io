@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Shuvajit Das Personal Website</title>
-	
+
 	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
 	<link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
@@ -13,6 +13,7 @@
 	<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
 	<link rel="import" href="bower_components/paper-card/paper-card.html">
 	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
+	<link rel="import" href="bower_components/iron-media-query/iron-media-query.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis" rel="stylesheet" type="text/css">
@@ -63,7 +64,8 @@
 <body>
 	<div class="horizontal layout">
 		<!-- empty for picture -->
-		<div class="flex-6"></div>
+		<div class="flex-6" id="left-half"></div>
+
 		<div class="flex-6">
 			<template is="dom-bind">
 				<div class="vertical layout">
@@ -112,9 +114,7 @@
 			colors = ['#8a2636', '#1a5159', '#d06933', '#1c9541']; //#c95f26
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
-		        console.log(tabs.selected);
 		        $('#intro-info').hide();
-				console.log(colors[tabs.selected]);
 		        $('#main-card').css("background-color", colors[tabs.selected]);
 		        $('#main-card').css({'opacity': 0.85});
 		    });
