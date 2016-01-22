@@ -13,7 +13,6 @@
 	<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
 	<link rel="import" href="bower_components/paper-card/paper-card.html">
 	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
-	<link rel="import" href="bower_components/iron-media-query/iron-media-query.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis" rel="stylesheet" type="text/css">
@@ -66,11 +65,7 @@
 <body>
 	<div class="horizontal layout">
 		<!-- empty for picture -->
-		<iron-media-query query="(min-width: 856px)" query-matches="{{wide}}"></iron-media-query>
-		<template is="dom-if" if="{{wide}}">
-			<div class="flex-6" id="left-half"></div>
-		</template>
-
+		<div class="flex-6" id="left-half"></div>
 		<div class="flex-6">
 			<template is="dom-bind">
 				<div class="vertical layout">
