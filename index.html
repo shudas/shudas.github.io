@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shuvajit Das Personal Website</title>
 	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
 	<link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
@@ -15,7 +19,8 @@
 	<style is="custom-style">
         :root {
             --highlight-color: #AE97D1;
-            --purple-color: #3C2263;
+            /*--purple-color: #3C2263;*/
+            --purple-color: rgba(60, 34, 99, 0.85);
             --font-color: #e2e1b3;
 
             --default-primary-color: var(--purple-color);
@@ -24,7 +29,7 @@
 
             /* custom CSS mixin */
             --paper-tabs: {
-            	background-color: var(--purple-color);
+            	/*background-color: var(--purple-color);*/
             	selection-bar-color: var(--font-color);
                 color: var(--font-color); /* variable defined in default-theme.html */
             }
@@ -42,9 +47,14 @@
 				box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
             }
 
+            --paper-card: {
+            	background: rgba(0, 0, 0, 0);
+            }
+
             --paper-card-content: {
             	/*'#8a2636', '#1a5159', '#c95f26', '#1c9541'*/
-            	background: #54397b;
+            	/*background: #54397b;*/
+            	background: rgba(84, 57, 123, 0.85);
             }
         }
     </style>
@@ -105,6 +115,7 @@
 		        $('#intro-info').hide();
 				console.log(colors[tabs.selected]);
 		        $('#main-card').css("background-color", colors[tabs.selected]);
+		        $('#main-card').css({'opacity': 0.85});
 		    });
         });
 	</script>
