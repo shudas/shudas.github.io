@@ -13,26 +13,33 @@
                 color: #BADECC; /*#BADECC*/
             }
 
-            h3, h4, h5 {
+            h3, h4, h4 {
                 padding: 0px;
                 margin: 0px;
+                font-weight: normal;
+            }
+
+            .filler {
+                @apply(--layout-flex);
+                min-width: 16px;
             }
 
             .title {
                 color: #fff;
+                font-weight: bold;
             }
         </style>
 
         <div class="vertical layout">
             <div class="horizontal layout center header-group">
                 <h3 class="title">{{title}}</h3>
-                <div class="flex"></div>
-                <h5 class="header">{{date}}</h5>
+                <div class="filler"></div>
+                <h4 class="header">{{date}}</h4>
             </div>
             <div class="horizontal layout header-group">
-                <h5 class="header">{{location}}</h5>
-                <div class="flex"></div>
-                <h5 class="header">{{extra}}</h5>
+                <h4 class="header">{{location}}</h4>
+                <div class="filler"></div>
+                <h4 class="header">{{extra}}</h4>
             </div>
             <content></content>
         </div>

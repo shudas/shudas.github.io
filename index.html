@@ -44,15 +44,13 @@
             	/*color: var(--font-color);*/
             }
 
-            --paper-toolbar: {
-				box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-            }
-
             --paper-toolbar-height: 56px;
 
-            --paper-card: {
-            	background: rgba(0, 0, 0, 1);
+            --paper-toolbar: {
+				box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+				opacity: 0.93;
             }
+
         }
     </style>
 </head>
@@ -78,7 +76,7 @@
 
 
 					<!-- Introduction on page open -->
-					<paper-card class="section" id="intro-info">
+					<paper-card class="section main-card" id="intro-info">
 						<div class="card-content">
 							Hi there! Looks like you found my website. Feel free to look around here.
 						</div>
@@ -88,9 +86,9 @@
 					<iron-pages selected="{{selected}}" class="vertical layout">
 						<!-- Experience -->
 						<div class="vertical layout">
-							<big-section class="section" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+							<big-section class="section main-card" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
 							</big-section>
-							<big-section class="section" title="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+							<big-section class="section main-card" title="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
 							</big-section>
 
 							<!-- <paper-card class="section flex">
