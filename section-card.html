@@ -9,26 +9,30 @@
         <style>
             .header-group {
                 font-family: 'Dosis', serif;
-                margin-bottom: 8px;
-                color: #BADECC;
+                margin-bottom: 6px;
+                color: #BADECC; /*#BADECC*/
             }
 
-            h4 {
+            h3, h4, h5 {
                 padding: 0px;
                 margin: 0px;
+            }
+
+            .title {
+                color: #fff;
             }
         </style>
 
         <div class="vertical layout">
-            <div class="horizontal layout header-group">
-                <h4 class="header">{{title}}</h4>
+            <div class="horizontal layout center header-group">
+                <h3 class="title">{{title}}</h3>
                 <div class="flex"></div>
-                <h4 class="header">{{date}}</h4>
+                <h5 class="header">{{date}}</h5>
             </div>
             <div class="horizontal layout header-group">
-                <h4 class="header">{{location}}</h4>
+                <h5 class="header">{{location}}</h5>
                 <div class="flex"></div>
-                <h4 class="header">{{extra}}</h4>
+                <h5 class="header">{{extra}}</h5>
             </div>
             <content></content>
         </div>

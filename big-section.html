@@ -1,0 +1,29 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+<link rel="import" href="section-card.html">
+
+<dom-module id="big-section">
+
+    <template>
+        <style>
+        </style>
+
+        <div class="layout vertical">
+            <paper-card class="flex" elevation="4">
+                <div class="card-content main-card">
+                    <section-card title="{{title}}" date="{{date}}" location="{{location}}" extra="{{extra}}">
+                        Hello Page 1
+                    </section-card>
+                </div>
+            </paper-card>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "big-section"
+        });
+    </script>
+
+</dom-module>

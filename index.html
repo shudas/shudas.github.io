@@ -13,6 +13,7 @@
 	<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
 	<link rel="import" href="bower_components/paper-card/paper-card.html">
 	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
+	<link rel="import" href="big-section.html">
 	<link rel="import" href="section-card.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
@@ -31,18 +32,16 @@
 
             /* custom CSS mixin */
             --paper-tabs: {
-            	/*background-color: var(--purple-color);*/
             	selection-bar-color: var(--font-color);
                 color: var(--font-color); /* variable defined in default-theme.html */
             }
 
             /*toolbar stuffs*/
-            /*--paper-toolbar-background: var(--purple-color);*/
             --paper-toolbar-title: {
             	font-family: 'Dosis', serif;
             	margin-left: 8px;
             	font-size: 2em;
-            	color: var(--font-color);
+            	/*color: var(--font-color);*/
             }
 
             --paper-toolbar: {
@@ -52,14 +51,7 @@
             --paper-toolbar-height: 56px;
 
             --paper-card: {
-            	background: rgba(0, 0, 0, 0);
-            }
-
-            --paper-card-content: {
-            	/*'#8a2636', '#1a5159', '#c95f26', '#1c9541'*/
-            	/*background: #54397b;*/
-            	/*background: rgba(84, 57, 123, 0.92);*/
-            	/*background: var(--purple-color);*/
+            	background: rgba(0, 0, 0, 1);
             }
         }
     </style>
@@ -85,15 +77,23 @@
 					</paper-toolbar>
 
 
-					<!-- Each section -->
+					<!-- Introduction on page open -->
 					<paper-card class="section" id="intro-info">
 						<div class="card-content">
 							Hi there! Looks like you found my website. Feel free to look around here.
 						</div>
 					</paper-card>
+
+					<!-- Each section -->
 					<iron-pages selected="{{selected}}" class="vertical layout">
+						<!-- Experience -->
 						<div class="vertical layout">
-							<paper-card class="section flex">
+							<big-section class="section" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+							</big-section>
+							<big-section class="section" title="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+							</big-section>
+
+							<!-- <paper-card class="section flex">
 								<div class="card-content main-card">
 									<section-card title="Page 1" date="1/2/15" location="USA" extra="extra 1">
 										Hello Page 1
@@ -106,9 +106,10 @@
 										Hello Page 1
 									</section-card>
 								</div>
-							</paper-card>
+							</paper-card> -->
 						</div>
 
+						<!-- Education -->
 						<div class="vertical layout">
 							<paper-card class="section flex">
 								<div class="card-content main-card">
@@ -223,7 +224,7 @@
 
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
-			colors = ['#8a2636', '#1a5159', '#b36236', '#1a8c55']; //#d06933, 1c9541
+			colors = ['#8a2636', '#233e8a', '#1a5159', '#1a8c55']; //#932864, #b36236, #d06933, 1c9541
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
