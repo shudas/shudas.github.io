@@ -1,0 +1,50 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" type="text/css">
+
+<dom-module id="section-card">
+
+    <template>
+        <style>
+            .header-group {
+                font-family: 'Dosis', serif;
+                margin-bottom: 8px;
+                color: #BADECC;
+            }
+
+            h4 {
+                padding: 0px;
+                margin: 0px;
+            }
+        </style>
+
+        <div class="vertical layout">
+            <div class="horizontal layout header-group">
+                <h4 class="header">{{title}}</h4>
+                <div class="flex"></div>
+                <h4 class="header">{{date}}</h4>
+            </div>
+            <div class="horizontal layout header-group">
+                <h4 class="header">{{location}}</h4>
+                <div class="flex"></div>
+                <h4 class="header">{{extra}}</h4>
+            </div>
+            <content></content>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "section-card",
+            ready: function() {
+                // set this element's owner property
+                // this.title = "Section Card";
+                // this.date = "1/1/16";
+                // this.location = "USA";
+                // this.extra = "Extra Info";
+            }
+        });
+    </script>
+
+</dom-module>

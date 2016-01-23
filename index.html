@@ -13,6 +13,7 @@
 	<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
 	<link rel="import" href="bower_components/paper-card/paper-card.html">
 	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
+	<link rel="import" href="section-card.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis" rel="stylesheet" type="text/css">
@@ -21,7 +22,7 @@
         :root {
             --highlight-color: #AE97D1;
             /*--purple-color: #3C2263;*/
-            --purple-color: rgba(60, 34, 99, 0.92);
+            --purple-color: rgba(60, 34, 99, 0.93);
             --font-color: #e2e1b3;
 
             --default-primary-color: var(--purple-color);
@@ -57,7 +58,8 @@
             --paper-card-content: {
             	/*'#8a2636', '#1a5159', '#c95f26', '#1c9541'*/
             	/*background: #54397b;*/
-            	background: rgba(84, 57, 123, 0.92);
+            	/*background: rgba(84, 57, 123, 0.92);*/
+            	/*background: var(--purple-color);*/
             }
         }
     </style>
@@ -69,67 +71,150 @@
 		<div class="flex-6">
 			<template is="dom-bind">
 				<div class="vertical layout">
-					<div>
-						<paper-toolbar class="medium-tall">
-							<div class="title" id="my-name">Shuvajit Das</div>
-							<div class="bottom fit flex">
-								<paper-tabs selected="{{selected}}" id="tabs">
-									<paper-tab>EXPERIENCE</paper-tab>
-									<paper-tab>EDUCATION</paper-tab>
-									<paper-tab>PROJECTS</paper-tab>
-									<paper-tab>CONTACT</paper-tab>
-								</paper-tabs>
-							</div>
-						</paper-toolbar>
-					</div>
-
-<!-- 					<paper-card class="section">
-						<div class="card-content" id="main-card">
-							<div id="intro-info">
-								
-							</div>
-							<iron-pages selected="{{selected}}">
-								<div>
-									Page 1
-								</div>
-								<div>
-									Page 2
-								</div>
-								<div>
-									Page 3
-								</div>
-								<div>
-									Page 4
-								</div>
-							</iron-pages>
+					<!-- Top toolbar -->
+					<paper-toolbar class="medium-tall">
+						<div class="title" id="my-name">Shuvajit Das</div>
+						<div class="bottom fit flex">
+							<paper-tabs selected="{{selected}}" id="tabs">
+								<paper-tab>EXPERIENCE</paper-tab>
+								<paper-tab>EDUCATION</paper-tab>
+								<paper-tab>PROJECTS</paper-tab>
+								<paper-tab>CONTACT</paper-tab>
+							</paper-tabs>
 						</div>
-					</paper-card> -->
+					</paper-toolbar>
+
+
+					<!-- Each section -->
 					<paper-card class="section" id="intro-info">
 						<div class="card-content">
 							Hi there! Looks like you found my website. Feel free to look around here.
 						</div>
 					</paper-card>
 					<iron-pages selected="{{selected}}" class="vertical layout">
-						<paper-card class="section flex">
-							<div class="card-content main-card">
-								Page 1
-							</div>
-						</paper-card>
-						<paper-card class="section flex">
-							<div class="card-content main-card">
-								Page 2
-							</div>
-						</paper-card>
-						<paper-card class="section flex">
-							<div class="card-content main-card">
-								Page 3
-							</div>
-						</paper-card>
-						<paper-card class="section flex">
-							<div class="card-content main-card">
-								Page 4
-							</div>
-						</paper-card>
+						<div class="vertical layout">
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 1" date="1/2/15" location="USA" extra="extra 1">
+										Hello Page 1
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 1" date="1/2/15" location="USA" extra="extra 1">
+										Hello Page 1
+									</section-card>
+								</div>
+							</paper-card>
+						</div>
+
+						<div class="vertical layout">
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 2" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 2
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 2" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 2
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 2" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 2
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 2" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 2
+									</section-card>
+								</div>
+							</paper-card>
+						</div>
+						
+						<div class="vertical layout">
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 3" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 3
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 3" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 3
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 3" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 3
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 3" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 3
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 3" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 3
+									</section-card>
+								</div>
+							</paper-card>
+						</div>
+
+						<div class="vertical layout">
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 4" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 4
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 4" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 4
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 4" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 4
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 4" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 4
+									</section-card>
+								</div>
+							</paper-card>
+							<paper-card class="section flex">
+								<div class="card-content main-card">
+									<section-card title="Page 4" date="1/2/12" location="USA" extra="extra 2">
+										Hello Page 4
+									</section-card>
+								</div>
+							</paper-card>
+						</div>
 					</iron-pages>
 				</div>
 			</template>
@@ -138,12 +223,11 @@
 
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
-			colors = ['#8a2636', '#1a5159', '#d06933', '#1c9541']; //#c95f26
+			colors = ['#8a2636', '#1a5159', '#b36236', '#1a8c55']; //#d06933, 1c9541
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
 		        $('.main-card').css("background-color", colors[tabs.selected]);
-		        $('.main-card').css({'opacity': 0.92});
 		    });
         });
 	</script>
