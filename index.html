@@ -13,6 +13,7 @@
 	<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
 	<link rel="import" href="bower_components/paper-card/paper-card.html">
 	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
+	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
 	<link rel="import" href="big-section.html">
 	<link rel="import" href="section-card.html">
 	<!-- My CSS -->
@@ -50,8 +51,22 @@
 				box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 				opacity: 0.93;
             }
-
         }
+
+        paper-fab.blue {
+			--paper-fab-background: var(--paper-light-blue-500);
+			--paper-fab-keyboard-focus-background: var(--paper-light-blue-900);
+		}
+
+		paper-fab.black {
+			--paper-fab-background: var(--paper-grey-900);
+			--paper-fab-keyboard-focus-background: var(--paper-grey-500);
+		}
+
+		paper-fab.red {
+			--paper-fab-background: var(--paper-red-700);
+			--paper-fab-keyboard-focus-background: var(--paper-red-500);
+		}
     </style>
 </head>
 <body>
@@ -110,17 +125,19 @@
 
 						<!-- Contact -->
 						<paper-card class="section main-card" id="intro-info">
-							<div class="card-content">
+							<div class="card-content layout">
 								<p>Feel free to check me out on LinkedIn and Github but more importantly, listen to my music at Reverbnation!</p>
-								<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" style="text-decoration:none;">
-									<img class="logo" src="images/linkedin_logo.jpg" alt="Linkedin">
-								</a>
-								<a href="https://github.com/shudas" style="text-decoration:none;">
-									<img class="logo" src="images/github_logo.jpg" alt="Github">
-								</a>
-								<a href="http://www.reverbnation.com/shudas" style="text-decoration:none;">
-									<img class="logo" src="images/reverbnation_dark.jpg" alt="Reverbnation">
-								</a>
+								<div class="layout horizontal">
+									<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" class="logo">
+										<paper-fab src="images/linkedin.png" title="linkedin" class="blue"></paper-fab>
+									</a>
+									<a href="https://github.com/shudas" class="logo">
+										<paper-fab src="images/github.png" title="github" class="black"></paper-fab>
+									</a>
+									<a href="http://www.reverbnation.com/shudas" class="logo">
+										<paper-fab src="images/reverbnation.png" title="reverbnation" class="red"></paper-fab>
+									</a>
+								</div>
 							</div>
 						</paper-card>
 					</iron-pages>
@@ -131,7 +148,8 @@
 
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
-			colors = ['#1a5159', '#233e8a', '#8a2636', '#1a8c55']; //#932864, #b36236, #d06933, 1c9541
+			// need rgba b/c dark buttons over transparent card
+			colors = ['#1a5159', '#233e8a', '#8a2636', 'rgba(26, 140, 85, 0.8)']; //'#1a8c55'
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();

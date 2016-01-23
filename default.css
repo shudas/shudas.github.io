@@ -30,7 +30,7 @@ p {
 }
 
 .main-card {
-	opacity: 0.93;
+	/*opacity: 0.93;*/
 }
 
 #my-name {
@@ -43,6 +43,13 @@ p {
 }
 
 .logo {
+	text-decoration:none;
+	opacity: 1;
+	margin-right: 8px;
+	z-index: 2;
+}
+
+/*.logo {
 	width: 48px;
 	height: 48px;
 	margin-right: 6px;
@@ -59,7 +66,7 @@ p {
 	transition: opacity 0s;
 	-webkit-transition: opacity 0s;
 	opacity: 1;
-}
+}*/
 
 @media only screen and (max-width : 856px) {
 	#left-half {
