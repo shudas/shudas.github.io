@@ -17,6 +17,10 @@ body {
 	color: #e2e1b3;
 }
 
+p {
+	margin-top: 0px;
+}
+
 .content-wrapper {
     background-color: rgba(77, 0, 0, 0.75);
 }
@@ -36,6 +40,25 @@ body {
 
 #intro-info {
 	background: rgba(60, 34, 99, 0.92);
+}
+
+.logo {
+	width: 48px;
+	height: 48px;
+	margin-right: 6px;
+	opacity: 1;
+}
+
+.logo:hover {
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	opacity: 0.6;
+}
+
+.logo:active {
+	transition: opacity 0s;
+	-webkit-transition: opacity 0s;
+	opacity: 1;
 }
 
 @media only screen and (max-width : 856px) {

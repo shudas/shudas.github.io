@@ -28,11 +28,36 @@
                 color: #fff;
                 font-weight: bold;
             }
+
+            a:link {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            a:visited {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            a:active {
+                color: #BADECC;
+                text-decoration: underline;
+            }
         </style>
 
         <div class="vertical layout">
             <div class="horizontal layout center header-group">
-                <h3 class="title">{{title}}</h3>
+                <template is="dom-if" if="{{titlelink}}">
+                    <h3 class="title"><a href="{{titlelink}}">{{title}}</a></h3>
+                </template>
+                <template is="dom-if" if="{{!titlelink}}">
+                    <h3 class="title">{{title}}</h3>
+                </template>
                 <div class="filler"></div>
                 <h4 class="header">{{date}}</h4>
             </div>
@@ -47,14 +72,29 @@
 
     <script>
         Polymer({
-            is: "section-card",
-            ready: function() {
-                // set this element's owner property
-                // this.title = "Section Card";
-                // this.date = "1/1/16";
-                // this.location = "USA";
-                // this.extra = "Extra Info";
-            }
+            is: "section-card"
+            // properties: {
+            //     title: {
+            //         type: String,
+            //         value: ""
+            //     },
+            //     titlelink: {
+            //         type: String,
+            //         value: ""
+            //     },
+            //     date: {
+            //         type: String,
+            //         value: ""
+            //     },
+            //     location: {
+            //         type: String,
+            //         value: ""
+            //     },
+            //     extra: {
+            //         type: String,
+            //         value: ""
+            //     }
+            // }
         });
     </script>
 

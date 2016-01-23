@@ -86,9 +86,9 @@
 					<iron-pages selected="{{selected}}" class="vertical layout">
 						<!-- Experience -->
 						<div class="vertical layout">
-							<big-section class="section main-card" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+							<big-section class="section main-card" titlelink="https://www.salesforceiq.com" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
 							</big-section>
-							<big-section class="section main-card" title="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+							<big-section class="section main-card" title="Cask" titlelink="http://cask.co" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
 							</big-section>
 						</div>
 
@@ -100,6 +100,7 @@
 							</big-section>
 						</div>
 						
+						<!-- Projects -->
 						<div class="vertical layout">
 							<big-section class="section main-card" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
 							</big-section>
@@ -107,12 +108,23 @@
 							</big-section>
 						</div>
 
-						<div class="vertical layout">
-							<big-section class="section main-card" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
-							</big-section>
-							<big-section class="section main-card" title="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
-							</big-section>
-						</div>
+						<!-- Contact -->
+						<paper-card class="section main-card" id="intro-info">
+							<div class="card-content">
+								<p>
+									Feel free to check me out on LinkedIn and Github. My r&eacutesum&eacute can be found <a class="link" href="resources/resume.pdf">here</a>.<br/>Most importantly, check out my music at Reverbnation!
+								</p>
+								<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" style="text-decoration:none;">
+									<img class="logo" src="images/linkedin_logo.jpg" alt="Linkedin">
+								</a>
+								<a href="https://github.com/shudas" style="text-decoration:none;">
+									<img class="logo" src="images/github_logo.jpg" alt="Github">
+								</a>
+								<a href="http://www.reverbnation.com/shudas" style="text-decoration:none;">
+									<img class="logo" src="images/reverbnation_dark.jpg" alt="Reverbnation">
+								</a>
+							</div>
+						</paper-card>
 					</iron-pages>
 				</div>
 			</template>
@@ -121,7 +133,7 @@
 
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
-			colors = ['#8a2636', '#233e8a', '#1a5159', '#1a8c55']; //#932864, #b36236, #d06933, 1c9541
+			colors = ['#1a5159', '#233e8a', '#8a2636', '#1a8c55']; //#932864, #b36236, #d06933, 1c9541
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();

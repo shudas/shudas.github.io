@@ -12,7 +12,7 @@
         <div class="layout vertical">
             <paper-card class="flex" elevation="4">
                 <div class="card-content main-card">
-                    <section-card title="{{title}}" date="{{date}}" location="{{location}}" extra="{{extra}}">
+                    <section-card title="{{title}}" titlelink="{{titlelink}}" date="{{date}}" location="{{location}}" extra="{{extra}}">
                         Hello Page 1
                     </section-card>
                 </div>
@@ -22,7 +22,21 @@
 
     <script>
         Polymer({
-            is: "big-section"
+            is: "big-section",
+            properties: {
+                titlelink: {
+                    type: String,
+                    value: ""
+                },
+                location: {
+                    type: String,
+                    value: ""
+                },
+                extra: {
+                    type: String,
+                    value: ""
+                }
+            }
         });
     </script>
 
