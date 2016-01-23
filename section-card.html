@@ -9,7 +9,7 @@
         <style>
             .header-group {
                 font-family: 'Dosis', serif;
-                margin-bottom: 6px;
+                padding-bottom: 6px;
                 color: #BADECC; /*#BADECC*/
             }
 
@@ -51,20 +51,22 @@
         </style>
 
         <div class="vertical layout">
-            <div class="horizontal layout center header-group">
-                <template is="dom-if" if="{{titlelink}}">
-                    <h3 class="title"><a href="{{titlelink}}">{{title}}</a></h3>
-                </template>
-                <template is="dom-if" if="{{!titlelink}}">
-                    <h3 class="title">{{title}}</h3>
-                </template>
-                <div class="filler"></div>
-                <h4 class="header">{{date}}</h4>
-            </div>
-            <div class="horizontal layout header-group">
-                <h4 class="header">{{location}}</h4>
-                <div class="filler"></div>
-                <h4 class="header">{{extra}}</h4>
+            <div class="vertical layout" id="topHeader">
+                <div class="horizontal layout center header-group">
+                    <template is="dom-if" if="{{titlelink}}">
+                        <h3 class="title"><a href="{{titlelink}}">{{title}}</a></h3>
+                    </template>
+                    <template is="dom-if" if="{{!titlelink}}">
+                        <h3 class="title">{{title}}</h3>
+                    </template>
+                    <div class="filler"></div>
+                    <h4 class="header">{{date}}</h4>
+                </div>
+                <div class="horizontal layout header-group">
+                    <h4 class="header">{{location}}</h4>
+                    <div class="filler"></div>
+                    <h4 class="header">{{extra}}</h4>
+                </div>
             </div>
             <content></content>
         </div>
@@ -72,7 +74,7 @@
 
     <script>
         Polymer({
-            is: "section-card"
+            is: "section-card",
             // properties: {
             //     title: {
             //         type: String,
@@ -95,6 +97,12 @@
             //         value: ""
             //     }
             // }
+            ready: function() {
+                if (!this.title && !this.date && !this.location && !this.extra) {
+                    console.log("yo");
+                    this.$.topHeader.hidden = true;
+                }
+            }
         });
     </script>
 

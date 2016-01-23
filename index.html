@@ -49,8 +49,16 @@
 
             --paper-toolbar: {
 				box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-				opacity: 0.93;
+				background-color: var(--purple-color);
             }
+
+            --paper-card {
+	        	background: transparent;
+	        }
+
+			big-section {
+        		background-color: var(--purple-color);
+        	}
         }
 
         paper-fab.blue {
@@ -91,11 +99,11 @@
 
 
 					<!-- Introduction on page open -->
-					<paper-card class="section main-card" id="intro-info">
+<!-- 					<paper-card class="section main-card" id="intro-info">
 						<div class="card-content">
-							Hey there! I am a musical software developer. Feel free to look around!
 						</div>
-					</paper-card>
+					</paper-card> -->
+					<big-section class="section main-card" id="intro-info">Hey there! I am a musical software developer. Feel free to look around!</big-section>
 
 					<!-- Each section -->
 					<iron-pages selected="{{selected}}" class="vertical layout">
@@ -124,7 +132,22 @@
 						</div>
 
 						<!-- Contact -->
-						<paper-card class="section main-card" id="intro-info">
+						<big-section class="section main-card">
+							<p>Feel free to check me out on LinkedIn and Github but more importantly, listen to my music at Reverbnation!</p>
+							<div class="layout horizontal">
+								<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" class="logo">
+									<paper-fab src="images/linkedin.png" title="linkedin" class="blue"></paper-fab>
+								</a>
+								<a href="https://github.com/shudas" class="logo">
+									<paper-fab src="images/github.png" title="github" class="black"></paper-fab>
+								</a>
+								<a href="http://www.reverbnation.com/shudas" class="logo">
+									<paper-fab src="images/reverbnation.png" title="reverbnation" class="red"></paper-fab>
+								</a>
+							</div>
+						</big-section>
+
+						<!-- <paper-card class="section main-card" id="intro-info">
 							<div class="card-content layout">
 								<p>Feel free to check me out on LinkedIn and Github but more importantly, listen to my music at Reverbnation!</p>
 								<div class="layout horizontal">
@@ -139,7 +162,7 @@
 									</a>
 								</div>
 							</div>
-						</paper-card>
+						</paper-card> -->
 					</iron-pages>
 				</div>
 			</template>
@@ -149,11 +172,11 @@
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
 			// need rgba b/c dark buttons over transparent card
-			colors = ['#1a5159', '#233e8a', '#8a2636', 'rgba(26, 140, 85, 0.8)']; //'#1a8c55'
+			colors = ['rgba(26, 81, 89, 0.8)', 'rgba(35, 62, 138, 0.8)', 'rgba(138, 38, 54, 0.8)', 'rgba(26, 140, 85, 0.8)']; //#1a5159', '#233e8a', '#8a2636', '#1a8c55'
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
-		        $('.main-card').css("background-color", colors[tabs.selected]);
+		        $('.main-card').css("background", colors[tabs.selected]);
 		    });
         });
 	</script>
