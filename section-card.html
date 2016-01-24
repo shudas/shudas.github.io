@@ -19,6 +19,10 @@
                 font-weight: normal;
             }
 
+            .right-justify {
+                text-align: right;
+            }
+
             .filler {
                 @apply(--layout-flex);
                 min-width: 16px;
@@ -60,12 +64,12 @@
                         <h3 class="heading">{{heading}}</h3>
                     </template>
                     <div class="filler"></div>
-                    <h4 class="header">{{date}}</h4>
+                    <h4 class="header right-justify">{{date}}</h4>
                 </div>
                 <div class="horizontal layout header-group">
                     <h4 class="header">{{location}}</h4>
                     <div class="filler"></div>
-                    <h4 class="header">{{extra}}</h4>
+                    <h4 class="header right-justify">{{extra}}</h4>
                 </div>
             </div>
             <content></content>
