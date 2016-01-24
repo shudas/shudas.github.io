@@ -25,7 +25,7 @@
         :root {
             --highlight-color: #AE97D1;
             /*--purple-color: #3C2263;*/
-            --purple-color: rgba(60, 34, 99, 0.93);
+            --purple-color: rgba(60, 34, 99, 0.94);
             --font-color: #e2e1b3;
 
             --default-primary-color: var(--purple-color);
@@ -107,7 +107,7 @@
 							<!-- Experience -->
 							<div class="vertical layout">
 								<!-- SIQ -->
-								<big-section class="section main-card" titlelink="https://www.salesforceiq.com" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+								<big-section class="section main-card" titlelink="https://www.salesforceiq.com" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer" myCardColor="black">
 									<p class="white">Product</p>
 									<p>Customer relationship management (CRM) software that helps businesses keep track of their relationships with all of their customers so they can sell smarter.</p>
 									<p class="white">Contributions</p>
@@ -197,11 +197,11 @@
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
 			// need rgba b/c dark buttons over transparent card
-			colors = ['rgba(26, 81, 89, 0.93)', 'rgba(35, 62, 138, 0.93)', 'rgba(138, 38, 54, 0.93)', 'rgba(26, 140, 85, 0.93)']; //#1a5159', '#233e8a', '#8a2636', '#1a8c55'
+			colors = ['rgba(26, 81, 89, 0.8)', 'rgba(35, 62, 138, 0.8)', 'rgba(138, 38, 54, 0.8)', 'rgba(26, 140, 85, 0.8)']; //#1a5159', '#233e8a', '#8a2636', '#1a8c55'
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
-		        $('.main-card').css("background", colors[tabs.selected]);
+		        $('.main-card').css("background-color", colors[tabs.selected]);
 		    });
         });
 	</script>
