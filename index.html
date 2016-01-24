@@ -99,42 +99,66 @@
 
 
 					<!-- Introduction on page open -->
-<!-- 					<paper-card class="section main-card" id="intro-info">
-						<div class="card-content">
-						</div>
-					</paper-card> -->
 					<big-section class="section main-card" id="intro-info">Hey there! I am a musical software developer. Feel free to look around!</big-section>
 
 					<!-- Each section -->
 					<iron-pages selected="{{selected}}" class="vertical layout">
 						<!-- Experience -->
 						<div class="vertical layout">
-							<big-section class="section main-card" titlelink="https://www.salesforceiq.com" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+							<!-- SIQ -->
+							<big-section class="section main-card" titlelink="https://www.salesforceiq.com" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+								<p class="white">Product</p>
+								<p>Customer relationship management (CRM) software that helps businesses keep track of their relationships with all of their customers so they can sell smarter.</p>
+								<p class="white">Contributions</p>
+								<ul>
+									<li>Integrated external marketing and sales software to improve user workflow</li>
+									<li>Improved memory footprint for resource intensive processes</li>
+								</ul>
 							</big-section>
-							<big-section class="section main-card" title="Cask" titlelink="http://cask.co" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+
+							<!-- Cask -->
+							<big-section class="section main-card" heading="Cask" titlelink="http://cask.co" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+								<p class="white">Product</p>
+								<p>Cask Data Application Platform (CDAP) helps developers easily create Hadoop solutions.</p>
+								<p class="white">Contributions</p>
+								<ul>
+									<li>Created scalable HTTP service APIs for CDAP</li>
+									<li>Wrote big data applications using CDAP which stores, queries, and graphs data</li>
+								</ul>
+							</big-section>
+
+							<!-- Vanderbilt -->
+							<big-section class="section main-card" heading="Robotics and Autonomous Systems Lab" titlelink="http://research.vuse.vanderbilt.edu/rasl/adaptive-robotics-for-children-with-autism/" date="Summer 2011, 2012, 2013" location="Vanderbilt University, Nashville, TN" extra="Software Engineering Intern">
+								<p class="white">Research</p>
+								<p>Among other projects, this lab develops autonomous systems to help children with Autism.</p>
+								<p class="white">Contributions</p>
+								<ul>
+									<li>Integrated a heart rate sensor with a virtual reality program to develop an intelligent system</li>
+									<li>Interfaced a Kinect sensor and a humanoid robot to make the robot respond to human gesture</li>
+								</ul>
+								<p class="white">This is the place where my journey into the world of computer science began! &#9786;</p>
 							</big-section>
 						</div>
 
 						<!-- Education -->
 						<div class="vertical layout">
-							<big-section class="section main-card" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
-							</big-section>
-							<big-section class="section main-card" title="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+							<big-section class="section main-card" heading="University of Michigan" date="Graduated Dec 2015" location="Ann Arbor, MI" extra="Bachelor's: Computer Science">
+							Umich creds
 							</big-section>
 						</div>
 						
 						<!-- Projects -->
 						<div class="vertical layout">
-							<big-section class="section main-card" title="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+							<big-section class="section main-card" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
 							</big-section>
-							<big-section class="section main-card" title="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+							<big-section class="section main-card" heading="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
 							</big-section>
 						</div>
 
 						<!-- Contact -->
 						<big-section class="section main-card">
-							<p>Feel free to check me out on LinkedIn and Github but more importantly, listen to my music at Reverbnation!</p>
-							<div class="layout horizontal">
+							<p>Feel free to check me out on LinkedIn and Github but most importantly, listen to my music at Reverbnation!</p>
+							<div class="layout horizontal center-justified logoHolder">
 								<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" class="logo">
 									<paper-fab src="images/linkedin.png" title="linkedin" class="blue"></paper-fab>
 								</a>
@@ -146,23 +170,6 @@
 								</a>
 							</div>
 						</big-section>
-
-						<!-- <paper-card class="section main-card" id="intro-info">
-							<div class="card-content layout">
-								<p>Feel free to check me out on LinkedIn and Github but more importantly, listen to my music at Reverbnation!</p>
-								<div class="layout horizontal">
-									<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" class="logo">
-										<paper-fab src="images/linkedin.png" title="linkedin" class="blue"></paper-fab>
-									</a>
-									<a href="https://github.com/shudas" class="logo">
-										<paper-fab src="images/github.png" title="github" class="black"></paper-fab>
-									</a>
-									<a href="http://www.reverbnation.com/shudas" class="logo">
-										<paper-fab src="images/reverbnation.png" title="reverbnation" class="red"></paper-fab>
-									</a>
-								</div>
-							</div>
-						</paper-card> -->
 					</iron-pages>
 				</div>
 			</template>

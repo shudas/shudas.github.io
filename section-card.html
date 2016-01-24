@@ -24,7 +24,7 @@
                 min-width: 16px;
             }
 
-            .title {
+            .heading {
                 color: #fff;
                 font-weight: bold;
             }
@@ -54,10 +54,10 @@
             <div class="vertical layout" id="topHeader">
                 <div class="horizontal layout center header-group">
                     <template is="dom-if" if="{{titlelink}}">
-                        <h3 class="title"><a href="{{titlelink}}">{{title}}</a></h3>
+                        <h3 class="heading"><a href="{{titlelink}}">{{heading}}</a></h3>
                     </template>
                     <template is="dom-if" if="{{!titlelink}}">
-                        <h3 class="title">{{title}}</h3>
+                        <h3 class="heading">{{heading}}</h3>
                     </template>
                     <div class="filler"></div>
                     <h4 class="header">{{date}}</h4>
@@ -76,7 +76,7 @@
         Polymer({
             is: "section-card",
             // properties: {
-            //     title: {
+            //     heading: {
             //         type: String,
             //         value: ""
             //     },
@@ -98,8 +98,7 @@
             //     }
             // }
             ready: function() {
-                if (!this.title && !this.date && !this.location && !this.extra) {
-                    console.log("yo");
+                if (!this.heading && !this.date && !this.location && !this.extra) {
                     this.$.topHeader.hidden = true;
                 }
             }

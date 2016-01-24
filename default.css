@@ -17,8 +17,9 @@ body {
 	color: #e2e1b3;
 }
 
-p {
-	margin-top: 0px;
+big-section p, ul {
+	font-size: 0.85em;
+	margin: 8px 0px 0px 0px;
 }
 
 .content-wrapper {
@@ -41,6 +42,14 @@ p {
 .logo {
 	text-decoration:none;
 	margin-right: 8px;
+}
+
+.logoHolder {
+	margin-top: 16px;
+}
+
+.white {
+	color: #fff;
 }
 
 @media only screen and (max-width : 856px) {
