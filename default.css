@@ -22,6 +22,26 @@ big-section p, ul {
 	margin: 8px 0px 0px 0px;
 }
 
+a:link {
+    color: #fff;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #BADECC;
+    text-decoration: underline;
+}
+
 .content-wrapper {
     background-color: rgba(77, 0, 0, 0.75);
 }
