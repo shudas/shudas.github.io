@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Shuvajit Das Personal Website</title>
 
+
 	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
 	<link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
@@ -15,12 +16,16 @@
 	<link rel="import" href="bower_components/paper-card/paper-card.html">
 	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
 	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+	
+	<link rel="stylesheet" type="text/css" href="lib/slick-1.5.9/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/slick-1.5.9/slick/slick-theme.css"/>
+	
 	<link rel="import" href="big-section.html">
-	<link rel="import" href="section-card.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	
 	<style is="custom-style">
         :root {
             --highlight-color: #AE97D1;
@@ -108,62 +113,101 @@
 							<div class="vertical layout">
 								<!-- SIQ -->
 								<big-section class="section main-card" titlelink="https://www.salesforceiq.com" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer" myCardColor="black">
-									<p class="white">Product</p>
-									<p>Customer relationship management (CRM) software that helps businesses keep track of their relationships with all of their customers so they can sell smarter.</p>
-									<p class="white">Contributions</p>
-									<ul>
-										<li>Integrated external marketing and sales software to improve user workflow</li>
-										<li>Improved memory footprint for resource intensive processes</li>
-									</ul>
+									<div class="section-content">
+										<p class="white">Product</p>
+										<p>Customer relationship management (CRM) software that helps businesses keep track of their relationships with all of their customers so they can sell smarter.</p>
+										<p class="white">Contributions</p>
+										<ul>
+											<li>Integrated external marketing and sales software to improve user workflow</li>
+											<li>Improved memory footprint for resource intensive processes</li>
+										</ul>
+									</div>
 								</big-section>
 
 								<!-- Cask -->
 								<big-section class="section main-card" heading="Cask" titlelink="http://cask.co" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
-									<p class="white">Product</p>
-									<p>Cask Data Application Platform (CDAP) helps developers easily create Hadoop solutions.</p>
-									<p class="white">Contributions</p>
-									<ul>
-										<li>Created scalable HTTP service APIs for CDAP</li>
-										<li>Wrote big data applications using CDAP which stores, queries, and graphs data</li>
-									</ul>
+									<div class="section-content">
+										<p class="white">Product</p>
+										<p>Cask Data Application Platform (CDAP) helps developers easily create Hadoop solutions.</p>
+										<p class="white">Contributions</p>
+										<ul>
+											<li>Created scalable HTTP service APIs for CDAP</li>
+											<li>Wrote big data applications using CDAP which stores, queries, and graphs data</li>
+										</ul>
+									</div>
 								</big-section>
 
 								<!-- Vanderbilt -->
 								<big-section class="section main-card" heading="Robotics and Autonomous Systems Lab" titlelink="http://research.vuse.vanderbilt.edu/rasl/adaptive-robotics-for-children-with-autism/" date="Summer 2011, 2012, 2013" location="Vanderbilt University, Nashville, TN" extra="Research Intern">
-									<p class="white" style="color: #b0a1c6;">This is the where my journey into the world of computer science began! &nbsp;:)</p>
-									<p class="white">Research</p>
-									<p>Among other projects, this lab develops autonomous systems to help children with Autism.</p>
-									<p class="white">Contributions</p>
-									<ul>
-										<li>Integrated a heart rate sensor with a virtual reality program to develop an intelligent system</li>
-										<li>Interfaced a Kinect sensor and a humanoid robot to make the robot respond to human gesture</li>
-									</ul>
-									<p class="white">Papers</p>
-									<ul>
-										<li>
-											<a href="https://www.youngscientistjournal.org/article/development-of-an-intelligent-real-time-heart-rate-sensitive-virtual-reality-system">
-												Development of an Intelligent, Real-time, Heart Rate Sensitive Virtual Reality System.
-											</a>
-										</li>
-										<li>
-											<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6907247&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6907247">
-												Autonomous Robot-mediated Imitation Learning for Children with Autism
-											</a>
-										</li>
-									</ul>
+									<div class="section-content">
+										<p class="white" style="color: #b0a1c6;">This is the where my journey into the world of computer science began! &nbsp;:)</p>
+										<p class="white">Research</p>
+										<p>Among other projects, this lab develops autonomous systems to help children with Autism.</p>
+										<p class="white">Contributions</p>
+										<ul>
+											<li>Integrated a heart rate sensor with a virtual reality program to develop an intelligent system</li>
+											<li>Interfaced a Kinect sensor and a humanoid robot to make the robot respond to human gesture</li>
+										</ul>
+										<p class="white">Papers</p>
+										<ul>
+											<li>
+												<a href="https://www.youngscientistjournal.org/article/development-of-an-intelligent-real-time-heart-rate-sensitive-virtual-reality-system">
+													Development of an Intelligent, Real-time, Heart Rate Sensitive Virtual Reality System.
+												</a>
+											</li>
+											<li>
+												<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6907247&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6907247">
+													Autonomous Robot-mediated Imitation Learning for Children with Autism
+												</a>
+											</li>
+										</ul>
+									</div>
 								</big-section>
 							</div>
 
 							<!-- Education -->
 							<div class="vertical layout">
 								<big-section class="section main-card" heading="University of Michigan" date="Graduated Dec 2015" location="Ann Arbor, MI" extra="Bachelor's: Computer Science">
-								Umich creds
+									<div class="section-content">
+										<p class="white">Relevant coursework</p>
+										<ul>
+											<li>Database Management Systems</li>
+											<li>Information Retrieval and Web Search</li>
+											<li>Intro to Machine Learning</li>
+											<li>Intro to Computer Vision</li>
+											<li>Intro to Operating Systems</li>
+											<li>Intro to Computer Security</li>
+											<li>Intro to Computer Architecture</li>
+											<li>Mobile App Development for Entrepreneurs</li>
+										</ul>
+										<p class="white">Honors and groups</p>
+										<ul>
+											<li>Dean's List</li>
+											<li>University Honors</li>
+											<li>James B. Angell Scholar</li>
+											<li>John Deere Scholarship Award</li>
+											<li>Eta Kappa Nu Honors Society Member</li>
+										</ul>
+									</div>
 								</big-section>
 							</div>
 							
 							<!-- Projects -->
 							<div class="vertical layout">
-								<big-section class="section main-card" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer">
+								<big-section class="section main-card" heading="Hobby Link" date="Sept - Dec 2015" location="University of Michigan, Ann Arbor, MI" extra="Course Project">
+									<div class="section-content vertical layout">
+										<p class="white">Overview</p>
+										<p>A location-aware mobile application to bring together people who share similar hobbies in a local community. The app takes into account a user's location and skill level to find fellow hobbyists.
+										<br/>We developed a minimum viable product which contained core features.
+										</p>
+										<div class="layout horizontal center-justified section">
+											<div class="single-item" style="width: 250px;">
+												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img1.png"></div>
+												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img2.png"></div>
+												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img3.png"></div>
+											</div>
+										</div>
+									</div>
 								</big-section>
 								<big-section class="section main-card" heading="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
 								</big-section>
@@ -171,7 +215,7 @@
 
 							<!-- Contact -->
 							<big-section class="section main-card">
-								<p>Feel free to check me out on LinkedIn and Github but most importantly, listen to my music at Reverbnation!</p>
+								Feel free to check me out on LinkedIn and Github but most importantly, listen to my music at Reverbnation!
 								<div class="layout horizontal center-justified logoHolder">
 									<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" class="logo">
 										<paper-fab src="images/linkedin.png" title="linkedin" class="blue"></paper-fab>
@@ -194,6 +238,9 @@
 		</div>
 	</div>
 
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="lib/slick-1.5.9/slick/slick.min.js"></script>
+
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
 			// need rgba b/c dark buttons over transparent card
@@ -203,6 +250,13 @@
 		        $('#intro-info').hide();
 		        $('.main-card').css("background-color", colors[tabs.selected]);
 		    });
+
+		    // image transitions
+			$('.single-item').slick({
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 2000
+			});
         });
 	</script>
 	
