@@ -7,6 +7,10 @@ body > div {
 	background: rgba(121, 98, 156, 0.75);
 }
 
+#intro-info {
+	background-color: #5f11ab;
+}
+
 #contentContainer {
 	margin-top: 0px;
 	margin-left: 16px;

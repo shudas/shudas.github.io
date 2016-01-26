@@ -31,7 +31,8 @@
         :root {
             --highlight-color: #AE97D1;
             /*--purple-color: #3C2263;*/
-            --purple-color: rgba(60, 34, 99, 0.95);
+            /*--purple-color: rgba(60, 34, 99, 0.95);*/
+            --purple-color: #5f11ab;
             --font-color: #e2e1b3;
 
             --default-primary-color: var(--purple-color);
@@ -260,7 +261,7 @@
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
 			// need rgba b/c dark buttons over transparent card
-			colors = ['#2a6393', '#9f2639', '#a51372', '#2273cd']; //#1d5e69', '#233e8a', '#8a2636', '#1a8c55'
+			colors = ['#2a6393', '#10a06e', '#a51372', '#2273cd']; //#1d5e69', '#9f2639', '#8a2636', '#1a8c55'
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
