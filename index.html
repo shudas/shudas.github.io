@@ -17,14 +17,14 @@
 	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
 	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
 	
-	<link rel="stylesheet" type="text/css" href="lib/slick-1.5.9/slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="lib/slick-1.5.9/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/slick-carousel/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/slick-carousel/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/slick-lightbox/slick-lightbox.css"/>
 	
 	<link rel="import" href="big-section.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis" rel="stylesheet" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	
 	<style is="custom-style">
         :root {
@@ -214,9 +214,12 @@
 										</ul>
 										<div class="layout horizontal center-justified section">
 											<div class="single-item" style="width: 250px;">
-												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img1.png"></div>
+												<!-- <div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img1.png"></div>
 												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img2.png"></div>
-												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img3.png"></div>
+												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img3.png"></div> -->
+												<a style="margin: 0px 16px;" href="images/hobbylink/img1.png" data-caption="Lorem ipsum 1600x1300"><img class="showoff-img" src="images/hobbylink/img1.png"></a>
+												<a style="margin: 0px 16px;" href="images/hobbylink/img2.png" data-caption="Lorem ipsum 1630x1280"><img class="showoff-img" src="images/hobbylink/img2.png"></a>
+												<a style="margin: 0px 16px;" href="images/hobbylink/img3.png" data-caption="Lorem ipsum 1500x1250"><img class="showoff-img" src="images/hobbylink/img3.png"></a>
 											</div>
 										</div>
 									</div>
@@ -250,8 +253,10 @@
 		</div>
 	</div>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="lib/slick-1.5.9/slick/slick.min.js"></script>
+	<script type="text/javascript" src="lib/slick-carousel/slick/slick.min.js"></script>
+	<script type="text/javascript" src="lib/slick-lightbox/slick-lightbox.js"></script>
 
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
@@ -269,6 +274,7 @@
 				autoplay: true,
 				autoplaySpeed: 2000
 			});
+			$('.single-item').slickLightbox();
         });
 	</script>
 	
