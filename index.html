@@ -24,13 +24,15 @@
 	<link rel="import" href="big-section.html">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="default.css">
+	<!-- <link rel="stylesheet" type="text/css" href="test-default.css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis" rel="stylesheet" type="text/css">
 	
 	<style is="custom-style">
         :root {
             --highlight-color: #AE97D1;
             /*--purple-color: #3C2263;*/
-            --purple-color: rgba(60, 34, 99, 0.95);
+            /*--purple-color: rgba(60, 34, 99, 0.95);*/
+            --purple-color: #5f11ab;
             --font-color: #e2e1b3;
 
             --default-primary-color: var(--purple-color);
@@ -54,203 +56,211 @@
             --paper-toolbar-height: 56px;
 
             --paper-toolbar: {
-				/*box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);*/
+				/*box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);*/
+				@apply(--shadow-elevation-4dp);
 				background-color: var(--purple-color);
             }
-
-            --paper-card {
-	        	background: transparent;
-	        }
-
-			big-section {
-        		background-color: var(--purple-color);
-        	}
         }
 
         paper-fab.blue {
 			--paper-fab-background: var(--paper-light-blue-500);
 			--paper-fab-keyboard-focus-background: var(--paper-light-blue-900);
+			@apply(--shadow-elevation-4dp);
 		}
 
 		paper-fab.black {
 			--paper-fab-background: var(--paper-grey-900);
 			--paper-fab-keyboard-focus-background: var(--paper-grey-500);
+			@apply(--shadow-elevation-4dp);
 		}
 
 		paper-fab.red {
-			--paper-fab-background: var(--paper-red-700);
-			--paper-fab-keyboard-focus-background: var(--paper-red-500);
+			--paper-fab-background: var(--paper-red-a700);
+			--paper-fab-keyboard-focus-background: var(--paper-red-900);
+			@apply(--shadow-elevation-4dp);
 		}
     </style>
 </head>
 <body class="vertical layout fullbleed">
 	<div class="horizontal layout" style="height: 100%;">
 		<!-- empty for picture -->
-		<div class="flex-6" id="left-half"></div>
-		<div class="flex-6 layout vertical fullbleed">
-			<template is="dom-bind">
-				<paper-scroll-header-panel class="flex">
-					<!-- Top toolbar -->
-					<paper-toolbar class="medium-tall">
-						<div class="title" id="my-name">Shuvajit Das</div>
-						<div class="bottom fit flex">
-							<paper-tabs selected="{{selected}}" id="tabs">
-								<paper-tab>EXPERIENCE</paper-tab>
-								<paper-tab>EDUCATION</paper-tab>
-								<paper-tab>PROJECTS</paper-tab>
-								<paper-tab>CONTACT</paper-tab>
-							</paper-tabs>
-						</div>
-					</paper-toolbar>
+		<template is="dom-bind">
+			<paper-scroll-header-panel class="flex header-panel" >
+				<!-- Top toolbar -->
+				<paper-toolbar class="medium-tall">
+					<div class="title" id="my-name">Shuvajit Das</div>
+					<div class="bottom fit flex">
+						<paper-tabs selected="{{selected}}" id="tabs">
+							<paper-tab>EXPERIENCE</paper-tab>
+							<paper-tab>EDUCATION</paper-tab>
+							<paper-tab>PROJECTS</paper-tab>
+							<paper-tab>CONTACT</paper-tab>
+						</paper-tabs>
+					</div>
+				</paper-toolbar>
 
-					<div class="vertical layout" style="margin-bottom: 16px; padding: 0px 16px;">  <!-- style="" -->
-						<!-- Introduction on page open -->
-						<big-section class="section main-card" id="intro-info">Hey there! I am a musical software developer. Feel free to look around!</big-section>
+				<div id="contentContainer" class="vertical layout">  <!-- style="" -->
+					<!-- Introduction on page open -->
+					<big-section class="section main-card" id="intro-info">Hey there! I am a musical software developer. Feel free to look around!</big-section>
 
-						<!-- Each section -->
-						<iron-pages selected="{{selected}}" class="vertical layout">
-							<!-- Experience -->
-							<div class="vertical layout">
-								<!-- SIQ -->
-								<big-section class="section main-card" titlelink="https://www.salesforceiq.com" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer" myCardColor="black">
-									<div class="section-content">
-										<p class="white">Product</p>
-										<p>Customer relationship management (CRM) software that helps businesses keep track of their relationships with all of their customers so they can sell smarter.</p>
-										<p class="white">Contributions</p>
-										<ul>
-											<li>Integrated external marketing and sales software to improve user workflow</li>
-											<li>Improved memory footprint for resource intensive processes</li>
-										</ul>
-									</div>
-								</big-section>
-
-								<!-- Cask -->
-								<big-section class="section main-card" heading="Cask" titlelink="http://cask.co" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
-									<div class="section-content">
-										<p class="white">Product</p>
-										<p>Cask Data Application Platform (CDAP) helps developers easily create Hadoop solutions.</p>
-										<p class="white">Contributions</p>
-										<ul>
-											<li>Created scalable HTTP service APIs for CDAP</li>
-											<li>Wrote big data applications using CDAP which stores, queries, and graphs data</li>
-										</ul>
-									</div>
-								</big-section>
-
-								<!-- Vanderbilt -->
-								<big-section class="section main-card" heading="Robotics and Autonomous Systems Lab" titlelink="http://research.vuse.vanderbilt.edu/rasl/adaptive-robotics-for-children-with-autism/" date="Summer 2011, 2012, 2013" location="Vanderbilt University, Nashville, TN" extra="Research Intern">
-									<div class="section-content">
-										<p class="white" style="color: #b0a1c6;">This is the where my journey into the world of computer science began! &nbsp;:)</p>
-										<p class="white">Research</p>
-										<p>Among other projects, this lab develops autonomous systems to help children with Autism.</p>
-										<p class="white">Contributions</p>
-										<ul>
-											<li>Integrated a heart rate sensor with a video game to develop a system that gives feedback to the end user based on perceived anxiety from playing the game.</li>
-											<li>
-												<p>Interfaced a Kinect sensor and a humanoid robot. The robot taught children with Autism to imitate its movements. A Microsoft Kinect detected that child's movements and the robot gave appropriate feedback.
-												<p style="margin-top: 8px;">A video about this research was featured in Science Nation. (There's even a small clip of me playing the therapist role!)
-												</p>
-											</li>
-										</ul>
-										<div class="horizontal layout center-justified video-wrapper">
-											<iframe src="https://www.youtube.com/embed/Fp8kndY5E84" frameborder="0" allowfullscreen></iframe>
-										</div>
-										<p class="white">Papers</p>
-										<ul>
-											<li>
-												<a href="https://www.youngscientistjournal.org/article/development-of-an-intelligent-real-time-heart-rate-sensitive-virtual-reality-system">
-													Development of an Intelligent, Real-time, Heart Rate Sensitive Virtual Reality System.
-												</a>
-											</li>
-											<li>
-												<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6907247&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6907247">
-													Autonomous Robot-mediated Imitation Learning for Children with Autism
-												</a>
-											</li>
-										</ul>
-									</div>
-								</big-section>
-							</div>
-
-							<!-- Education -->
-							<div class="vertical layout">
-								<big-section class="section main-card" heading="University of Michigan" date="Graduated Dec 2015" location="Ann Arbor, MI" extra="Bachelor's: Computer Science">
-									<div class="section-content">
-										<p class="white">Relevant coursework</p>
-										<ul>
-											<li>Database Management Systems</li>
-											<li>Information Retrieval and Web Search</li>
-											<li>Intro to Machine Learning</li>
-											<li>Intro to Computer Vision</li>
-											<li>Intro to Operating Systems</li>
-											<li>Intro to Computer Security</li>
-											<li>Intro to Computer Architecture</li>
-											<li>Mobile App Development for Entrepreneurs</li>
-										</ul>
-										<p class="white">Honors and groups</p>
-										<ul>
-											<li>Dean's List</li>
-											<li>University Honors</li>
-											<li>James B. Angell Scholar</li>
-											<li>John Deere Scholarship Award</li>
-											<li>Eta Kappa Nu Honors Society Member</li>
-										</ul>
-									</div>
-								</big-section>
-							</div>
-							
-							<!-- Projects -->
-							<div class="vertical layout">
-								<big-section class="section main-card" heading="Hobby Link" date="Sept - Dec 2015" location="University of Michigan, Ann Arbor, MI" extra="Course Project">
-									<div class="section-content vertical layout">
-										<p class="white">Overview</p>
-										<p>A location-aware mobile application to bring together people who share similar hobbies in a local community. The app takes into account a user's location and skill level to find fellow hobbyists.
-										</p>
-										<p>We developed a minimum viable product which contained core features.</p>
-										<ul>
-											<li>Adding a hobby</li>
-											<li>Editing a hobby</li>
-											<li>Finding fellow hobbyists
-										</ul>
-										<div class="layout horizontal center-justified section">
-											<div class="single-item" style="width: 250px;">
-												<!-- <div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img1.png"></div>
-												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img2.png"></div>
-												<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img3.png"></div> -->
-												<a style="margin: 0px 16px;" href="images/hobbylink/img1.png" data-caption="Lorem ipsum 1600x1300"><img class="showoff-img" src="images/hobbylink/img1.png"></a>
-												<a style="margin: 0px 16px;" href="images/hobbylink/img2.png" data-caption="Lorem ipsum 1630x1280"><img class="showoff-img" src="images/hobbylink/img2.png"></a>
-												<a style="margin: 0px 16px;" href="images/hobbylink/img3.png" data-caption="Lorem ipsum 1500x1250"><img class="showoff-img" src="images/hobbylink/img3.png"></a>
-											</div>
-										</div>
-									</div>
-								</big-section>
-								<big-section class="section main-card" heading="Cask" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
-								</big-section>
-							</div>
-
-							<!-- Contact -->
-							<big-section class="section main-card">
-								Feel free to check me out on LinkedIn and Github but most importantly, listen to my music at Reverbnation!
-								<div class="layout horizontal center-justified logoHolder">
-									<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" class="logo">
-										<paper-fab src="images/linkedin.png" title="linkedin" class="blue"></paper-fab>
-									</a>
-									<a href="https://github.com/shudas" class="logo">
-										<paper-fab src="images/github.png" title="github" class="black"></paper-fab>
-									</a>
-									<a href="http://www.reverbnation.com/shudas" class="logo">
-										<paper-fab src="images/reverbnation.png" title="reverbnation" class="red"></paper-fab>
-									</a>
+					<!-- Each section -->
+					<iron-pages selected="{{selected}}" class="vertical layout">
+						<!-- Experience -->
+						<div class="vertical layout">
+							<!-- SIQ -->
+							<big-section class="section main-card" titlelink="https://www.salesforceiq.com" heading="SalesforceIQ" date="Summer 2015, Feb 2016-Present" location="Palo Alto, CA" extra="Software Engineer" myCardColor="black">
+								<div class="section-content">
+									<p class="white">Product</p>
+									<p>Customer relationship management (CRM) software that helps businesses keep track of their relationships with all of their customers so they can sell smarter.</p>
+									<p class="white">Contributions</p>
+									<ul>
+										<li>Integrated external marketing and sales software to improve user workflow</li>
+										<li>Improved memory footprint for resource intensive processes</li>
+									</ul>
 								</div>
 							</big-section>
-						</iron-pages>
+
+							<!-- Cask -->
+							<big-section class="section main-card" heading="Cask" titlelink="http://cask.co" date="Summer 2014" location="Palo Alto, CA" extra="Software Engineering Intern">
+								<div class="section-content">
+									<p class="white">Product</p>
+									<p>Cask Data Application Platform (CDAP) helps developers easily create Hadoop solutions.</p>
+									<p class="white">Contributions</p>
+									<ul>
+										<li>Created scalable HTTP service APIs for CDAP</li>
+										<li>Wrote big data applications using CDAP which stores, queries, and graphs data</li>
+									</ul>
+								</div>
+							</big-section>
+
+							<!-- Vanderbilt -->
+							<big-section class="section main-card" heading="Robotics and Autonomous Systems Lab" titlelink="http://research.vuse.vanderbilt.edu/rasl/adaptive-robotics-for-children-with-autism/" date="Summer 2011, 2012, 2013" location="Vanderbilt University, Nashville, TN" extra="Research Intern">
+								<div class="section-content">
+									<p class="white" style="color: #badecc;">This is the where my journey into the world of computer science began! &nbsp;:)</p>
+									<p class="white">Research</p>
+									<p>Among other projects, this lab develops autonomous systems to help children with Autism.</p>
+									<p class="white">Contributions</p>
+									<ul>
+										<li>Integrated a heart rate sensor with a video game to develop a system that gives feedback to the end user based on perceived anxiety from playing the game.</li>
+										<li>
+											<p>Interfaced a Kinect sensor and a humanoid robot. The robot taught children with Autism to imitate its movements. A Microsoft Kinect detected that child's movements and the robot gave appropriate feedback.
+											<p style="margin-top: 8px;">A video about this research was featured in Science Nation. (There's even a small clip of me playing the therapist role!)
+											</p>
+										</li>
+									</ul>
+									<div class="horizontal layout center-justified video-wrapper">
+										<iframe src="https://www.youtube.com/embed/Fp8kndY5E84" frameborder="0" allowfullscreen></iframe>
+									</div>
+									<p class="white">Papers</p>
+									<ul>
+										<li>
+											<a href="https://www.youngscientistjournal.org/article/development-of-an-intelligent-real-time-heart-rate-sensitive-virtual-reality-system">
+												Development of an Intelligent, Real-time, Heart Rate Sensitive Virtual Reality System.
+											</a>
+										</li>
+										<li>
+											<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6907247&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6907247">
+												Autonomous Robot-mediated Imitation Learning for Children with Autism
+											</a>
+										</li>
+									</ul>
+								</div>
+							</big-section>
+						</div>
+
+						<!-- Education -->
+						<div class="vertical layout">
+							<big-section class="section main-card" heading="University of Michigan" date="Graduated Dec 2015" location="Ann Arbor, MI" extra="Bachelor's: Computer Science">
+								<div class="section-content">
+									<p class="white">Relevant coursework</p>
+									<ul>
+										<li>Database Management Systems</li>
+										<li>Information Retrieval and Web Search</li>
+										<li>Intro to Machine Learning</li>
+										<li>Intro to Computer Vision</li>
+										<li>Intro to Operating Systems</li>
+										<li>Intro to Computer Security</li>
+										<li>Intro to Computer Architecture</li>
+										<li>Mobile App Development for Entrepreneurs</li>
+									</ul>
+									<p class="white">Honors and groups</p>
+									<ul>
+										<li>Dean's List</li>
+										<li>University Honors</li>
+										<li>James B. Angell Scholar</li>
+										<li>John Deere Scholarship Award</li>
+										<li>Eta Kappa Nu Honors Society Member</li>
+									</ul>
+								</div>
+							</big-section>
+						</div>
 						
-					</div>
+						<!-- Projects -->
+						<div class="vertical layout">
+							<big-section class="section main-card" heading="Hobby Link" date="Sept - Dec 2015" location="University of Michigan" extra="Course Project">
+								<div class="section-content vertical layout">
+									<p class="white">Overview</p>
+									<p>A location-aware mobile application to bring together people who share similar hobbies in a local community. The app takes into account a user's location and skill level to find fellow hobbyists.
+									</p>
+									<p>We developed a minimum viable product which contained core features.</p>
+									<ul>
+										<li>Adding a hobby</li>
+										<li>Editing a hobby</li>
+										<li>Finding fellow hobbyists</li>
+									</ul>
+									<div class="layout horizontal center-justified section">
+										<div class="hobbylink-images" style="width: 90%; max-width: 300px;">
+											<a style="margin: 0px 16px;" href="images/hobbylink/img1.png" data-caption="Lorem ipsum 1600x1300"><img class="showoff-img" src="images/hobbylink/img1.png"></a>
+											<a style="margin: 0px 16px;" href="images/hobbylink/img2.png" data-caption="Lorem ipsum 1630x1280"><img class="showoff-img" src="images/hobbylink/img2.png"></a>
+											<a style="margin: 0px 16px;" href="images/hobbylink/img3.png" data-caption="Lorem ipsum 1500x1250"><img class="showoff-img" src="images/hobbylink/img3.png"></a>
+										</div>
+									</div>
+								</div>
+							</big-section>
+							<big-section class="section main-card" heading="Tidbits" date="Sept 2014" location="University of Michigan" extra="Hackathon project">
+								<div class="section-content vertical layout">
+									<p class="white">Overview</p>
+									<p>A mobile app that lets you keep "tidbits" of information about the important people in your life, from family and friends to professionals. You can also receive reminders to catch up with specific people.
+									</p>
+									<p>We developed a minimum viable product during MHacks, a hackathon hosted by the University of Michigan.</p>
+									<ul>
+										<li>Adding new contacts</li>
+										<li>Creating new tidbits of information</li>
+										<li>Getting reminders to catch up with individuals</li>
+									</ul>
+									<div class="layout horizontal center-justified section">
+										<div class="tidbits-images" style="width: 90%; max-width: 300px;">
+											<a style="margin: 0px 16px;" href="images/tidbits/img1.png" data-caption="Lorem ipsum 1600x1300"><img class="showoff-img" src="images/tidbits/img1.png"></a>
+											<a style="margin: 0px 16px;" href="images/tidbits/img2.png" data-caption="Lorem ipsum 1630x1280"><img class="showoff-img" src="images/tidbits/img2.png"></a>
+											<a style="margin: 0px 16px;" href="images/tidbits/img3.png" data-caption="Lorem ipsum 1500x1250"><img class="showoff-img" src="images/tidbits/img3.png"></a>
+										</div>
+									</div>
+								</div>
+							</big-section>
+						</div>
 
-				</paper-scroll-header-panel>
+						<!-- Contact -->
+						<big-section class="section main-card">
+							Feel free to check me out on LinkedIn and Github but most importantly, listen to my music at Reverbnation!
+							<div class="layout horizontal center-justified logoHolder">
+								<a href="http://www.linkedin.com/pub/shuvajit-das/82/451/940" class="logo">
+									<paper-fab src="images/linkedin.png" title="linkedin" class="blue"></paper-fab>
+								</a>
+								<a href="https://github.com/shudas" class="logo">
+									<paper-fab src="images/github.png" title="github" class="black"></paper-fab>
+								</a>
+								<a href="http://www.reverbnation.com/shudas" class="logo">
+									<paper-fab src="images/reverbnation.png" title="reverbnation" class="red"></paper-fab>
+								</a>
+							</div>
+						</big-section>
+					</iron-pages>
+					
+				</div>
 
-			</template>
-		</div>
+			</paper-scroll-header-panel>
+
+		</template>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -261,7 +271,7 @@
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
 			// need rgba b/c dark buttons over transparent card
-			colors = ['rgba(26, 81, 89, 0.85)', 'rgba(35, 62, 138, 0.85)', 'rgba(138, 38, 54, 0.85)', 'rgba(26, 140, 85, 0.85)']; //#1a5159', '#233e8a', '#8a2636', '#1a8c55'
+			colors = ['#1d5e69', '#2273cd', '#a51372', '#d84949']; //#1d5e69', '#9f2639', '#8a2636', '#1a8c55', #cb3d3d,
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
@@ -269,12 +279,18 @@
 		    });
 
 		    // image transitions
-			$('.single-item').slick({
+			$('.hobbylink-images').slick({
 				dots: true,
 				autoplay: true,
-				autoplaySpeed: 3000
+				autoplaySpeed: 4500
 			});
-			$('.single-item').slickLightbox();
+			$('.hobbylink-images').slickLightbox();
+			$('.tidbits-images').slick({
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 4500
+			});
+			$('.tidbits-images').slickLightbox();
         });
 	</script>
 	

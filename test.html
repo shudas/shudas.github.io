@@ -73,16 +73,19 @@
         paper-fab.blue {
 			--paper-fab-background: var(--paper-light-blue-500);
 			--paper-fab-keyboard-focus-background: var(--paper-light-blue-900);
+			@apply(--shadow-elevation-4dp);
 		}
 
 		paper-fab.black {
 			--paper-fab-background: var(--paper-grey-900);
 			--paper-fab-keyboard-focus-background: var(--paper-grey-500);
+			@apply(--shadow-elevation-4dp);
 		}
 
 		paper-fab.red {
-			--paper-fab-background: var(--paper-red-700);
-			--paper-fab-keyboard-focus-background: var(--paper-red-500);
+			--paper-fab-background: var(--paper-red-a700);
+			--paper-fab-keyboard-focus-background: var(--paper-red-900);
+			@apply(--shadow-elevation-4dp);
 		}
     </style>
 </head>
@@ -141,7 +144,7 @@
 							<!-- Vanderbilt -->
 							<big-section class="section main-card" heading="Robotics and Autonomous Systems Lab" titlelink="http://research.vuse.vanderbilt.edu/rasl/adaptive-robotics-for-children-with-autism/" date="Summer 2011, 2012, 2013" location="Vanderbilt University, Nashville, TN" extra="Research Intern">
 								<div class="section-content">
-									<p class="white" style="color: #b0a1c6;">This is the where my journey into the world of computer science began! &nbsp;:)</p>
+									<p class="white" style="color: #badecc;">This is the where my journey into the world of computer science began! &nbsp;:)</p>
 									<p class="white">Research</p>
 									<p>Among other projects, this lab develops autonomous systems to help children with Autism.</p>
 									<p class="white">Contributions</p>
@@ -214,7 +217,7 @@
 										<li>Finding fellow hobbyists
 									</ul>
 									<div class="layout horizontal center-justified section">
-										<div class="single-item" style="width: 250px;">
+										<div class="single-item" style="width: 288px">
 											<!-- <div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img1.png"></div>
 											<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img2.png"></div>
 											<div style="padding: 0px 16px;"><img class="showoff-img" src="images/hobbylink/img3.png"></div> -->
@@ -261,7 +264,7 @@
 	<script type="text/javascript">
 		window.addEventListener('WebComponentsReady', function(e) {
 			// need rgba b/c dark buttons over transparent card
-			colors = ['#2a6393', '#10a06e', '#a51372', '#2273cd']; //#1d5e69', '#9f2639', '#8a2636', '#1a8c55'
+			colors = ['#1d5e69', '#2273cd', '#a51372', '#cb3d3d']; //#1d5e69', '#9f2639', '#8a2636', '#1a8c55', #a32f23,d53333
             var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('iron-select', function() { 
 		        $('#intro-info').hide();
