@@ -93,7 +93,7 @@
 						<paper-tabs selected="{{selected}}" id="tabs">
 							<paper-tab>EXPERIENCE</paper-tab>
 							<paper-tab>EDUCATION</paper-tab>
-							<paper-tab>PROJECTS</paper-tab>
+							<paper-tab id="projectsTab">PROJECTS</paper-tab>
 							<paper-tab>CONTACT</paper-tab>
 						</paper-tabs>
 					</div>
@@ -203,16 +203,11 @@
 									<p>A location-aware mobile application to bring together people who share similar hobbies in a local community. The app takes into account a user's location and skill level to find fellow hobbyists.
 									</p>
 									<p>We developed a minimum viable product which contained core features.</p>
-									<ul>
-										<li>Adding a hobby</li>
-										<li>Editing a hobby</li>
-										<li>Finding fellow hobbyists</li>
-									</ul>
 									<div class="layout horizontal center-justified section">
 										<div class="hobbylink-images" style="width: 90%; max-width: 300px;">
-											<a style="margin: 0px 16px;" href="images/hobbylink/img1.png" data-caption="Lorem ipsum 1600x1300"><img class="showoff-img" src="images/hobbylink/img1.png"></a>
-											<a style="margin: 0px 16px;" href="images/hobbylink/img2.png" data-caption="Lorem ipsum 1630x1280"><img class="showoff-img" src="images/hobbylink/img2.png"></a>
-											<a style="margin: 0px 16px;" href="images/hobbylink/img3.png" data-caption="Lorem ipsum 1500x1250"><img class="showoff-img" src="images/hobbylink/img3.png"></a>
+											<a href="images/hobbylink/img1.png" data-caption="See existing hobbies and modify them"><img class="showoff-img" src="images/hobbylink/img1.png"></a>
+											<a href="images/hobbylink/img2.png" data-caption="Add new hobbies"><img class="showoff-img" src="images/hobbylink/img2.png"></a>
+											<a href="images/hobbylink/img3.png" data-caption="Discover nearby hobbyists and talk with your existing connections"><img class="showoff-img" src="images/hobbylink/img3.png"></a>
 										</div>
 									</div>
 								</div>
@@ -222,7 +217,7 @@
 									<p class="white">Overview</p>
 									<p>A mobile app that lets you keep "tidbits" of information about the important people in your life, from family and friends to professionals. You can also receive reminders to catch up with specific people.
 									</p>
-									<p>We developed a minimum viable product during MHacks, a hackathon hosted by the University of Michigan.</p>
+									<p>We developed a minimum viable product during MHacks, a hackathon hosted by the University of Michigan, in 36 hours.</p>
 									<ul>
 										<li>Adding new contacts</li>
 										<li>Creating new tidbits of information</li>
@@ -230,11 +225,31 @@
 									</ul>
 									<div class="layout horizontal center-justified section">
 										<div class="tidbits-images" style="width: 90%; max-width: 300px;">
-											<a style="margin: 0px 16px;" href="images/tidbits/img1.png" data-caption="Lorem ipsum 1600x1300"><img class="showoff-img" src="images/tidbits/img1.png"></a>
-											<a style="margin: 0px 16px;" href="images/tidbits/img2.png" data-caption="Lorem ipsum 1630x1280"><img class="showoff-img" src="images/tidbits/img2.png"></a>
-											<a style="margin: 0px 16px;" href="images/tidbits/img3.png" data-caption="Lorem ipsum 1500x1250"><img class="showoff-img" src="images/tidbits/img3.png"></a>
+											<a href="images/tidbits/img1.png" data-caption="See all tidbits for a given contact"><img class="showoff-img" src="images/tidbits/img1.png"></a>
+											<a href="images/tidbits/img2.png" data-caption="See all contacts"><img class="showoff-img" src="images/tidbits/img2.png"></a>
+											<a href="images/tidbits/img3.png" data-caption="Add a new tidbit"><img class="showoff-img" src="images/tidbits/img3.png"></a>
 										</div>
 									</div>
+								</div>
+							</big-section>
+							<big-section class="section main-card" heading="CollabHub" date="Sept 2013" location="University of Pennsylvania" extra="Hackathon project">
+								<div class="section-content vertical layout">
+									<p class="white">Overview</p>
+									<p>A website that lets you showcase your various talents to the world. You can then search for others who can perform different tasks so that you can all collaborate on something new together.
+									</p>
+									<p>In 48 hours, we developed a mostly functional version of the site for PennApps, the Unversity of Pennsylvania hackathon. A video walkthrough of the website was made for the competition.</p>
+									<div class="horizontal layout center-justified video-wrapper">
+										<iframe src="https://www.youtube.com/embed/EO3SfQHhocY" frameborder="0" allowfullscreen></iframe>
+									</div>
+								</div>
+							</big-section>
+							<big-section class="section main-card" heading="LeapSynth" date="Feb 2013" location="University of Michigan" extra="Hackathon project">
+								<div class="section-content vertical layout">
+									<p class="white">Overview</p>
+									<p>Use the Leap Motion hand tracker to play a synthesizer in air. Moving your fingers left &amp; right changed pitch, up &amp; down changed volume, and forward &amp; back changed customizable effects like reverb or delay. 
+									</p>
+									<p>In 36 hours, we developed a functioning product at the first ever MHacks. This was the first Hackathon I had ever attended and it was truly a blast! Unfortunately, I do not have any media to show from this project.
+									</p>
 								</div>
 							</big-section>
 						</div>
@@ -279,18 +294,27 @@
 		    });
 
 		    // image transitions
-			$('.hobbylink-images').slick({
-				dots: true,
+		    var slickOpts = {
+		    	dots: true,
 				autoplay: true,
 				autoplaySpeed: 4500
+			};
+
+			var slickLightOpts = {
+				caption: 'caption'
+			};
+
+
+			$('.hobbylink-images').slick(slickOpts);
+			$('.hobbylink-images').slickLightbox(slickLightOpts);
+			$('.tidbits-images').slick(slickOpts);
+			$('.tidbits-images').slickLightbox(slickLightOpts);
+
+			// fix issue with the height not loading initially
+			$('#projectsTab').on("click", function() {
+			    $('.hobbylink-images').get(0).slick.setPosition();
+			    $('.tidbits-images').get(0).slick.setPosition();
 			});
-			$('.hobbylink-images').slickLightbox();
-			$('.tidbits-images').slick({
-				dots: true,
-				autoplay: true,
-				autoplaySpeed: 4500
-			});
-			$('.tidbits-images').slickLightbox();
         });
 	</script>
 	

@@ -62,7 +62,7 @@ a:active {
 	padding-bottom: 50%; /* 16:9 -> 56.25 */
 	/*padding-top: 25px;*/
 	height: 0;
-	margin: 8px 0px;
+	margin: 16px 0px;
 }
 
 .video-wrapper iframe {
@@ -97,6 +97,10 @@ a:active {
 
 .white {
 	color: #fff;
+}
+
+.tidbits-images a, .hobbylink-images a {
+	margin: 8px 16px;
 }
 
 .showoff-img {
