@@ -1,0 +1,3 @@
+# netlify redirects to point to primary domain
+http://shudas.me/* https://www.shuvajit.com/:splat 301!
+https://shudas.me/* https://www.shuvajit.com/:splat 301!
