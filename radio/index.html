@@ -1,0 +1,137 @@
+<head>
+    <title>Shu's Radio Station</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.cdnfonts.com/css/chivo" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/genome" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="http://www.radiojar.com/wrappers/api-plugins/v1/css/player.css">
+
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            /* font-family: 'Chivo', sans-serif; */
+            font-family: 'Poppins', sans-serif;
+            font-size: larger;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("assets/nashville-background.jpg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .contents {
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: 400;
+        }
+
+        .paypal-btn {
+            width: 114px;
+            height: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="contents">
+            <h1 class="title">Shu Radio Station</h1>
+            <!-- <iframe src="https://www.radiojar.com/widget/radio/g6mcuf400f8uv/player/?autoplay_off" frameborder="0" width="400" height="134" scrolling="no"></iframe> -->
+            <div id="rj-player">
+                <div class="player-v3 player-medium">
+                    <div id="rj-cover">
+                        <a href="#"><img src="" /></a>
+                    </div>
+                    <div class="info">
+                        <div class="rjp-trackinfo-container">
+                            <h4 class="rjp-label">Now playing:</h4>
+                            <p id="trackInfo" class="rjp-info"></p>
+                        </div>
+                        <div class="rjp-player-container">
+                            <div id="rjp-radiojar-player"></div>
+                            <div id="rj-player-controls" class="rj-player-controls">
+                                <div class="jp-gui jp-interface">
+                                    <div class="jp-controls">
+                                        <a href="javascript:;" style="display:block" class="jp-play"
+                                            title="Play">&nbsp;<i class="icon-play"></i></a>
+                                        <a href="javascript:;" style="display:none" class="jp-pause" title="Pause"><i
+                                                class="icon-pause"></i></a>
+                                        <a href="javascript:;" style="display:block" class="jp-mute" title="Mute"><i
+                                                class="icon-volume-up"></i></a>
+                                        <a href="javascript:;" style="display:none" class="jp-unmute" title="Unmute"><i
+                                                class="icon-volume-off"></i></a>
+                                        <div class="jp-volume-bar-wrapper">
+                                            <div class="jp-volume-bar">
+                                                <div class="jp-volume-bar-value"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jp-no-solution">
+                                <span>Update Required</span>
+                                To play the media you will need to either update your browser to a recent version or
+                                update your <a href="https://get.adobe.com/flashplayer/" target="_blank">Flash
+                                    plugin</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Give Shu some free money!</p>
+            <form action="https://www.paypal.com/donate" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="shudas93@gmail.com" />
+                <input type="hidden" name="item_name" value="Give Shu Some Money" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input class="paypal-btn" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                    border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                    alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://www.radiojar.com/wrappers/api-plugins/v1/radiojar-min.js"></script>
+    <script>
+        rjq('#rjp-radiojar-player').radiojar('player', {
+            "streamName": "g6mcuf400f8uv",
+            "enableUpdates": true,
+            "defaultImage": "http://www.radiojar.com/content/stations/ag1zfnJhZGlvamFyY29tcjILEgpBdXRoQ2xpZW50GICAiI_3-8kKDAsSDlN0YXRpb25Qcm9maWxlGICAiJf43bYKDKIBA2Rldg/image/",
+            "autoplay": false
+        });
+        rjq('#rjp-radiojar-player').off('rj-track-load-event');
+        rjq('#rjp-radiojar-player').on('rj-track-load-event', function (event, data) {
+            updateInfo(data);
+            if (data.title != "" || data.artist != "") {
+                rjq('.rjp-trackinfo-container').show();
+                rjq('#trackInfo').html(data.artist + ' - "' + data.title + '"')
+            } else {
+                rjq('.rjp-trackinfo-container').hide();
+            }
+        });
+
+        function updateInfo(data) {
+            if (data.thumb) {
+                rjq('#rj-cover').html('<a href="#"><img src="' + data.thumb + '" alt="" title="" /></a>')
+            } else {
+                rjq('#rj-cover').html('')
+            }
+        }
+    </script>
+</body>
